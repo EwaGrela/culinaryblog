@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content%}
+	<div class="jumbotron colored-jumbotron">
+		<h1 class="page-title">Welcome to <span>Send-A-Recipe!</span>!</h1>
+		{% if user.is_authenticated %}
+		<h2 class="page-subtitle">The ultimate place, where you can:</h2>
+			<ul class="options">
+				<li class="options-item">
+					<a href="{% url 'posts:post_list' %}" class="btn  btn-lg">Check all the recipes</a>
+				</li>
+				<li class="options-item">
+					<a href="{% url 'posts:new_post' %}" class="btn  btn-lg">Add your own recipe!</a>
+				</li>
+			</ul>
+			
+			
+		
+		{% endif %}
+	</div>
+{% endblock %}

@@ -1,0 +1,193 @@
+body {
+	background-color: #ededed;
+
+}
+.btn {
+	font-family: 'Josefin Slab', serif;
+	font-weight: bolder;
+	font-size: 1.5em;
+}
+.btn:hover{
+	color: #fefefe;
+}
+#navbar {
+	background-color: rgb(51,0,51);
+}
+.jumbotron h1 {
+	color:  #663366;
+}
+.page-title {
+	font-family: 'Pacifico', cursive;
+	text-shadow: 1px 1px #fefefe;
+	color:  #663366;
+	margin: 25px 5px;
+}
+.page-subtitle {
+	color: rgb(51,0,51);
+	font-family: 'Josefin Slab', serif;
+}
+.nav-item {
+	font-weight: bolder;
+	color: #fefefe;
+	font-size: 1.5em;
+	font-family: 'Josefin Slab', serif;
+
+}
+.nav-item>a {
+	color: inherit;
+	text-decoration: none
+}
+.nav-item>a:hover {
+	color:  #660066;
+}
+
+.post-list, .options {
+	list-style: none;
+	
+}
+.post-item{
+	font-family: 'Josefin Slab', serif;
+}
+.post-item p{
+	font-weight: bolder;
+	color: #662266;
+	font-size: 1.6em;
+}
+.post-item div {
+	color: #330066;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.post-title {
+	color:  #330033;
+	font-family: "Pacifico", cursive;
+	text-shadow: #fff;
+}
+.post-title>a {
+	color: inherit;
+}
+.options {
+	margin-top: 50px;
+}
+
+.post {
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 0px;
+	padding: 2% 5%;
+	
+}
+
+.post-detail {
+	display: flex;
+	justify-content: space-between;
+	border: 1px dashed  #335533;
+	padding: 5%;
+}
+.post-content {
+	height: 90%;
+	width: 49%;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+
+}
+.post-content:nth-of-type(2){
+	align-self: center;
+	align-items: center;
+}
+
+.content-center {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.options-item {
+	margin: 10px;
+	background-color: #663366;
+	color: #dfdfdf;
+}
+.options-item>a{
+	color: inherit;
+}
+.options-item>a:hover{
+	color: #fefefe;
+}
+.colored-jumbotron {
+	background-color: #aa99aa;
+	border: 1px dashed  #335533;
+}
+.list-group-item {
+	border: 1px solid #cdcdcd;
+	margin: 15px 10px;
+	background-color:  #dcdcdc;
+}
+.control-label {
+	font-family: 'Josefin Slab', serif;
+	color: #666;
+	font-weight: bolder;
+	font-size: 1.2em;
+}
+
+#recipeForm .btn, .create{
+	background-color: #663366;
+	color: #dfdfdf;
+}
+
+#recipeForm .btn:hover, .create:hover{
+	color: #efefef;
+}
+
+#hamburger {
+	background-color: #660066
+}
+.icon-bar {
+	background-color: #fefefe;
+}
+
+#signupForm, #loginForm {
+	font-family: 'Josefin Slab', serif;
+	font-weight: bolder;
+}
+
+#signupForm label, #loginForm label {
+	color: #330045;
+}
+.form-header {
+	color: #330045;
+	font-family: 'Josefin Slab', serif;
+	font-weight: bolder;
+}
+#signupForm .btn, #loginForm .btn, .intro-btn {
+	background-color: #663366;
+	color:#fefefe;
+}
+.intro-btn {
+	margin-left: 10px;
+}
+
+.recipe-signature {
+	font-family: 'Josefin Slab', serif;
+	font-weight: bold;
+	color: #555;
+}
+.recipe-content {
+	font-family: 'Josefin Slab', serif;
+	font-weight: bolder;
+	color: #666;
+}
+.result {
+	font-family: 'Josefin Slab', serif;
+	font-weight: bolder;
+	color: #660066;
+}
+.glyphicon {
+	color: #660099;
+}
+.voting-header {
+	font-family: 'Josefin Slab', serif;
+	font-weight: bolder;
+	color: #666;
+}

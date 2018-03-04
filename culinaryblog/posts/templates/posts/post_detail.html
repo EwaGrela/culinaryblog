@@ -1,0 +1,54 @@
+{% extends 'posts/post_base.html' %}
+{% block post %}
+	<div class="jumbotron">
+		<div class="post-detail card">
+			{% if user.is_authenticated %}
+			<div class="post-content">
+				<h2 class="page-title">{{post.title}}</h2>
+				<p class="recipe-content card">{{post.content}}</p>
+				<p class="recipe-signature">by {{post.user}} on {{post.created_at}}
+				</p>
+			</div>
+			<div class="post-content">
+				<h3 class="voting-header">Vote:</h3>
+				<a href="#" onClick="document.getElementById('upvote{{post.id}}').submit()"}>
+					<span class="glyphicon glyphicon-triangle-top"></span>
+				</a>
+				
+				<p class="result"> likes: {{post.points}}</p>
+				<a href="#"  onClick="document.getElementById('downvote{{post.id}}').submit()">
+					<span class="glyphicon glyphicon-triangle-bottom"></span>
+				</a>
+				{% else %}
+				<div class="post-content">
+					<h1 class="page-title">{{post.title}}</h1>
+					<p class="recipe-content card">{{post.content}}</p>
+					<p class="recipe-signature">by {{post.user}} on {{post.created_at}}
+					</p>
+					<p class="result"> likes: {{post.points}} (log in to vote!)</p>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+		
+		
+		
+		<div>{% include 'posts/_post.html'  with post=object hide_delete=True %}</div>
+		
+	</div>
+	{% if user.is_authenticated %}
+		<form id="upvote{{post.id}}" action="{% url 'posts:upvote' pk=post.id %}" method="POST">
+			{% csrf_token %}
+			<input type="hidden">
+			
+		</form>
+	{% endif %}
+	{% if user.is_authenticated %}
+		<form id="downvote{{post.id}}" action="{% url 'posts:downvote' pk=post.id %}" method="POST">
+			{% csrf_token %}
+			<input type="hidden">
+		</form>
+	{% endif %}
+	
+	
+{% endblock %}
