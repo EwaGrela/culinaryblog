@@ -10,15 +10,18 @@
 				</p>
 			</div>
 			<div class="post-content col-6-md col-12">
+				{% if user != post.user %}
 				<h3 class="voting-header">Vote:</h3>
 				<a href="#" onClick="document.getElementById('upvote{{post.id}}').submit()"}>
 					<span class="glyphicon glyphicon-triangle-top"></span>
 				</a>
-				
+				{% endif %}
 				<p class="result"> likes: {{post.points}}</p>
+				{% if user != post.user %}
 				<a href="#"  onClick="document.getElementById('downvote{{post.id}}').submit()">
 					<span class="glyphicon glyphicon-triangle-bottom"></span>
 				</a>
+				{% endif %}
 				{% else %}
 				<div class="post-content col-6-md col-12">
 					<h1 class="page-title">{{post.title}}</h1>
