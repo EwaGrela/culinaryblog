@@ -2,12 +2,16 @@
 {% block post %}
 	<div class="container">
 		<div class="jumbotron colored-jumbotron">
-
-			<h1 class="page-title">All the recipes:</h1>
+			{% if  user.is_authenticated %}
+			<h1 class="page-title">Hello, {{user.username}}!</h1>
+			{% endif %}
+			<h2 class="page-title">Recipe list:</h2>
 			{% if user.is_authenticated %}
-			
 			<a href="{% url 'posts:new_post' %}" class="btn btn-large create">Create new recipe</a>
-		
+			{% else %}
+			<a href="{% url 'accounts:login' %}" class="btn btn-large create">Log in to add recipes</a>
+			<a href="{% url 'accounts:signup' %}" class="btn btn-large create">New user? Sign up</a>
+
 			{% endif %}	
 			<ul class="post-list list-group">
 			{% for post in post_list %}
