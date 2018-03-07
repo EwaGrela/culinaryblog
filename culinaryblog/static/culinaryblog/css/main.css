@@ -5,7 +5,6 @@ body {
 .btn {
 	font-family: 'Josefin Slab', serif;
 	font-weight: bolder;
-	font-size: 1.5em;
 }
 .btn:hover{
 	color: #fefefe;
@@ -81,21 +80,27 @@ body {
 .post-detail {
 	display: flex;
 	justify-content: space-between;
-	border: 1px dashed  #335533;
 	padding: 5%;
 }
 .post-content {
 	height: 90%;
-	width: 49%;
+	width: 48%;
 	display: flex;
 	flex-direction: column;
-	align-items: stretch;
+	/*align-items: stretch;*/
 
 }
 .post-content:nth-of-type(2){
-	align-self: center;
+	align-self: flex-start;
 	align-items: center;
+	padding-top: 70px;
 }
+./*post-content-links {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	align-self: center;
+}*/
 
 .content-center {
 	display: flex;
@@ -190,4 +195,7 @@ body {
 	font-family: 'Josefin Slab', serif;
 	font-weight: bolder;
 	color: #666;
+}
+.intro-btn {
+	margin-top: 10px;
 }

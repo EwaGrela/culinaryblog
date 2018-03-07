@@ -1,15 +1,15 @@
 {% extends 'posts/post_base.html' %}
 {% block post %}
 	<div class="jumbotron">
-		<div class="post-detail card">
+		<div class="row post-detail">
 			{% if user.is_authenticated %}
-			<div class="post-content">
+			<div class="post-content col-6-md col-12">
 				<h2 class="page-title">{{post.title}}</h2>
-				<p class="recipe-content card">{{post.content}}</p>
+				<p class="recipe-content">{{post.content}}</p>
 				<p class="recipe-signature">by {{post.user}} on {{post.created_at}}
 				</p>
 			</div>
-			<div class="post-content">
+			<div class="post-content col-6-md col-12">
 				<h3 class="voting-header">Vote:</h3>
 				<a href="#" onClick="document.getElementById('upvote{{post.id}}').submit()"}>
 					<span class="glyphicon glyphicon-triangle-top"></span>
@@ -20,12 +20,18 @@
 					<span class="glyphicon glyphicon-triangle-bottom"></span>
 				</a>
 				{% else %}
-				<div class="post-content">
+				<div class="post-content col-6-md col-12">
 					<h1 class="page-title">{{post.title}}</h1>
-					<p class="recipe-content card">{{post.content}}</p>
+					<p class="recipe-content">{{post.content}}</p>
 					<p class="recipe-signature">by {{post.user}} on {{post.created_at}}
 					</p>
-					<p class="result"> likes: {{post.points}} (log in to vote!)</p>
+					<p class="result"> likes: {{post.points}} </p>
+
+					
+				</div >
+				<div class="post-content col-6-md col-12">
+					<a class="btn btn-lg intro-btn" href="{% url 'accounts:login' %}">Log in</a>
+					<a class="btn btn-lg intro-btn" href="{% url 'accounts:signup' %}">Sign in</a>
 				</div>
 				{% endif %}
 			</div>
