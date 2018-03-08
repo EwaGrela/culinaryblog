@@ -42,18 +42,18 @@ class NewPost(LoginRequiredMixin, CreateView):
 		self.object.save()
 		return super().form_valid(form)
 
-class DeletePost(LoginRequiredMixin, SelectRelatedMixin, DeleteView):
-	select_related = ["user"]
-	model = models.Post
-	success_url = reverse_lazy("posts:post_list")
+# class DeletePost(LoginRequiredMixin, SelectRelatedMixin, DeleteView):
+# 	select_related = ["user"]
+# 	model = models.Post
+# 	success_url = reverse_lazy("posts:post_list")
 
-	def get_queryset(self):
-		queryset = super().get_queryset()
-		return queryset.filter(user_id = self.request.user.id)
+# 	def get_queryset(self):
+# 		queryset = super().get_queryset()
+# 		return queryset.filter(user_id = self.request.user.id)
 
-	def delete(self, *args, **kwargs):
-		messages.success(self.request, "Post was deleted!")
-		return super().delete(*args, **kwargs)
+# 	def delete(self):
+# 		messages.success(self.request, "Post was deleted!")
+# 		return super().delete()
 
 @login_required
 def upvote(request, pk):
@@ -62,6 +62,12 @@ def upvote(request, pk):
     post.points +=1
     post.save()
     return redirect('posts:post_list')
+
+@login_required
+def delete(request, pk):
+	post = models.Post.objects.get(pk=pk)
+	post.delete()
+	return redirect('posts:post_list')
 
 @login_required
 def downvote(request, pk):
